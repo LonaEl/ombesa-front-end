@@ -7,6 +7,8 @@ const ForgotPasswordScreen = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
+  const url = 'https://loso.adaptable.app/'
+
   const forgotPasswordHandler = async (e) => {
     e.preventDefault();
 
@@ -18,7 +20,7 @@ const ForgotPasswordScreen = () => {
  
     try {
       const { data } = await axios.post(
-        "/api/forgotpassword",
+        url + "/api/forgotpassword",
         { email },
          config 
       );

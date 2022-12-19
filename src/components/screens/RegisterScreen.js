@@ -17,7 +17,7 @@ const RegisterScreen = () => {
   const registerHandler = async (e) => {
     e.preventDefault();
 
-    
+     const url = 'https://loso.adaptable.app/'
      const config = {
       header: {
         "Content-Type": "application/json",
@@ -35,7 +35,7 @@ const RegisterScreen = () => {
       //lastname and firstname not included
       try {
         const { data } = await axios.post(
-          "/api/register",
+          url+ "/api/register",
           { lastname,
             firstname,
             username,

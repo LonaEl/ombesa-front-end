@@ -9,6 +9,8 @@ const LoginScreen = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  const url = 'https://loso.adaptable.app/'
+
   const navigate = useNavigate();
    useEffect(() => {
     if (localStorage.getItem("profile")) {
@@ -27,7 +29,7 @@ const LoginScreen = () => {
  
     try {
       const { data } = await axios.post(
-        "/api/login",
+        url + "/api/login",
         { email, password },
         config 
       );

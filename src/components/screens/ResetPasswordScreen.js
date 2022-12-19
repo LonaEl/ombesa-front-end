@@ -13,7 +13,8 @@ const ResetPasswordScreen = ({ history, match }) => {
 
   const resetPasswordHandler = async (e) => {
     e.preventDefault();
-
+  
+    const url = 'https://loso.adaptable.app/'
     const config = {
       header: {
         "Content-Type": "application/json",
@@ -31,7 +32,7 @@ const ResetPasswordScreen = ({ history, match }) => {
 
     try {
       const { data } = await axios.put(
-        `/api/passwordreset/${resetToken}`,
+       url + `/api/passwordreset/${resetToken}`,
         {
           password,
         },
