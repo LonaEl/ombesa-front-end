@@ -53,5 +53,41 @@ const useStyles = makeStyles()({
     display: 'block',
     textAlign: 'initial',
   },
+  overlay3: {
+    background: ' rgba(49,49,49,0.8)',
+  },
+  modalcontent: {
+    position: 'absolute',
+    top: '40%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    lineHeight : '1.4',
+    background: '#f1f1f1',
+    padding: '14px 28px',
+    borderRadius: '3px',
+    maxWidth: '600px',
+    minWidth: '300px',
+  },
+/*   modal: {
+    width: '100vw',
+    height: '100vh',
+    top:'0',
+    left: '0',
+    right:'0',
+    bottom: '0',
+    position: 'absolute',
+  }, */
+  closemodal: {
+    position: 'relative',
+    top: '5px',
+    right: '10px',
+    padding: '5px',
+  },
+  body2: {
+    '&.active-modal': {
+      overflowY: 'hidden',
+    },
+  },
+
 });
 export default useStyles;

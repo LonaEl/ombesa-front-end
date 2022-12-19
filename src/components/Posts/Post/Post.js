@@ -11,6 +11,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { deletePost } from '../../../actions/posts';
 import useStyles from './styles';
+import PaystackIntegration from '../../Payment/PaystackIntegration';
 
 /* import moment from 'moment'; */
 
@@ -18,35 +19,22 @@ import useStyles from './styles';
 const Post = ({ post, setCurrentId }) => {
 const user = JSON.parse(localStorage.getItem('profile'));
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const { classes } = useStyles();
+  const [modal, setModal] = useState(false);
+  
+  
+  const toggleModal = () => {
+    setModal(!modal);
+  };
 
-
- 
- 
-const pay = (e) => {
-  navigate('/payment');
-  };  
-
-   
-
-
-
-/* const Edit = (e) => {
-  e.stopPropagation();
-  setCurrentId(post._id);
-  navigate("/uploading")
-} */
-
- const openPost = (e) => {
-    navigate(`/posts/${post._id}`);
-  }; 
-
-
-return (
+  if(modal) {
+    document.body.classList.add('active-modal')
+  } else {
+    document.body.classList.remove('active-modal')
+  }
+  
+  return (
     <Card className={classes.card} raised elevation={6}>
-
-
       <ButtonBase
         component="span"
         name="test"
@@ -82,32 +70,45 @@ return (
           <Typography variant="body2" color="textSecondary" component="p">{post.message.split(' ').splice(0, 20).join(' ')}...</Typography>
         </CardContent> */}
       </ButtonBase>
-     {/*  <iframe src="https://friendlychat-92524.web.app/"></iframe> */}
-     <Typography>R{post.price}</Typography>
+    <Typography>R{post.price}</Typography>
        <CardActions className={classes.cardActions}>
-        
-       
-         <button id="checkout-button" onClick={pay} >Buy</button> 
-       
+<button id="checkout-button" onClick={toggleModal} >Buy</button> 
+
+<div className={classes.body2}>
+{modal && (
+        <div className={classes.modal}>
+          <div onClick={toggleModal} className={classes.overlay3}></div>
+          <div className={classes.modelcontent}>
+            <h4>Please enter your details</h4>
+            <>
+            <PaystackIntegration post={post} />
+            </>
+          <button className={classes.closemodal} onClick={toggleModal}>
+              CLOSE
+         </button>
+          </div>
+        </div>
+      )}
+</div>
 
 
-  {
-  
-  (user?.result?._id === post?.creator) && (
+
+
+
+
+
+
+
+
+ {
+ (user?.result?._id === post?.creator) && (
     <Button size="small" color="secondary" onClick={() => dispatch(deletePost(post._id))}>
       <DeleteIcon fontSize="small" /> &nbsp; Remove
     </Button>
   )
   }
-  
-
-
- 
-
-      
-      </CardActions>
-
-    </Card>
+  </CardActions>
+ </Card>
   );
 }
 

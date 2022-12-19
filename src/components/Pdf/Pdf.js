@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+/* import React, {useState} from 'react'
 import { Document,Page } from 'react-pdf/dist/esm/entry.webpack';
 import { useSelector } from 'react-redux';
 import './Pdf.css';
@@ -45,4 +45,4 @@ function Pdf() {
   );
 }
 
-export default Pdf;
+export default Pdf; */

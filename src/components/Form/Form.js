@@ -81,7 +81,7 @@ const disabled = !checked
         <TextField 
         name="title" 
         variant="outlined" 
-        label="Title" 
+        label="Name of the product" 
         value={postData.title} 
         onChange={formChange}
          />

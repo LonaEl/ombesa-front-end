@@ -13,7 +13,8 @@ import RegisterScreen from './components/screens/RegisterScreen';
 import ForgotPasswordScreen from './components/screens/ForgotPasswordScree';
 import ResetPasswordScreen from './components/screens/ResetPasswordScreen';
 import Upload from './components/Upload';
-import PaystackIntegration from './components/Payment/PaystackIntegration'; 
+/* import PaystackIntegration from './components/Payment/PaystackIntegration'; 
+import Complete from './components/Complete/complete'; */
 
 
 
@@ -39,7 +40,7 @@ const user = JSON.parse(localStorage.getItem('profile'));
           <Route exact path="/register" element={<RegisterScreen />} />
           <Route exact path="/forgotpassword"  element={<ForgotPasswordScreen />} />
           <Route exact path="/passwordreset/:resetToken" element={ <ResetPasswordScreen />} />
-          <Route path="/payment" exact element={<PaystackIntegration  />} /> 
+     {/*      <Route path="/paymentcomplete" exact element={<Complete />} />  */}
        </Routes>
       </Container>
     </BrowserRouter>

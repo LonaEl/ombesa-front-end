@@ -10,9 +10,7 @@ const LoginScreen = () => {
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
-  
-
-  useEffect(() => {
+   useEffect(() => {
     if (localStorage.getItem("profile")) {
       navigate("/");
     }
@@ -33,10 +31,8 @@ const LoginScreen = () => {
         { email, password },
         config 
       );
-
-      localStorage.setItem('profile', JSON.stringify(data))
-
-      navigate("/");
+    localStorage.setItem('profile', JSON.stringify(data))
+    navigate("/");
     } catch (error) {
       setError(error.response.data.error);
       setTimeout(() => {
@@ -83,8 +79,7 @@ const LoginScreen = () => {
         <button type="submit" className="btn btn-primary">
           Login
         </button>
-
-        <span className="login-screen__subtext">
+       <span className="login-screen__subtext">
           Don't have an account? <Link to="/register">Register</Link>
         </span>
       </form>

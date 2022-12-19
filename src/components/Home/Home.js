@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import { useDispatch } from 'react-redux';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { MuiChipsInput } from 'mui-chips-input';
+/* import { MuiChipsInput } from 'mui-chips-input'; */
 import { getPostsBySearch } from '../../actions/posts';
 import Posts from '../Posts/Posts';
 import Pagination from '../Pagination';
