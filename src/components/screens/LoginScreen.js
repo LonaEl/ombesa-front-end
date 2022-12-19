@@ -27,7 +27,7 @@ const LoginScreen = () => {
  
     try {
       const { data } = await axios.post(
-        "/api/auth/login",
+        "/api/login",
         { email, password },
         config 
       );

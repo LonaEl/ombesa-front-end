@@ -35,7 +35,7 @@ const RegisterScreen = () => {
       //lastname and firstname not included
       try {
         const { data } = await axios.post(
-          "/api/auth/register",
+          "/api/register",
           { lastname,
             firstname,
             username,
