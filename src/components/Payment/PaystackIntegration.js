@@ -35,6 +35,24 @@ const PaystackIntegration = ({ post }) => {
                   "value":product
               
                 },
+                {
+                  "display_name":"Buyer name",
+                  "variable_name":"Buyer name",
+                  "value":firstname
+              
+                },
+                {
+                  "display_name":"Buyer name",
+                  "variable_name":"Buyer name",
+                  "value":lastname
+              
+                },
+                {
+                  "display_name":"Buyer email",
+                  "variable_name":"Buyer email",
+                  "value":email
+              
+                },
               
               ]
             },

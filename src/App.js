@@ -6,17 +6,12 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import CreatorOrTag from './components/CreatorOrTag/CreatorOrTag';
-/* import Claim from './components/Claim/Claim'; */
  import Terms from './components/Terms/Terms'; 
 import LoginScreen from './components/screens/LoginScreen';
 import RegisterScreen from './components/screens/RegisterScreen';
 import ForgotPasswordScreen from './components/screens/ForgotPasswordScree';
 import ResetPasswordScreen from './components/screens/ResetPasswordScreen';
 import Upload from './components/Upload';
-/* import PaystackIntegration from './components/Payment/PaystackIntegration'; 
-import Complete from './components/Complete/complete'; */
-
-
 
 
 const App = () => {
@@ -40,7 +35,6 @@ const user = JSON.parse(localStorage.getItem('profile'));
           <Route exact path="/register" element={<RegisterScreen />} />
           <Route exact path="/forgotpassword"  element={<ForgotPasswordScreen />} />
           <Route exact path="/passwordreset/:resetToken" element={ <ResetPasswordScreen />} />
-     {/*      <Route path="/paymentcomplete" exact element={<Complete />} />  */}
        </Routes>
       </Container>
     </BrowserRouter>
