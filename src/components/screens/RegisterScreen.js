@@ -17,7 +17,7 @@ const RegisterScreen = () => {
   const registerHandler = async (e) => {
     e.preventDefault();
 
-     const url = 'https://loso.adaptable.app'
+     const url = 'http://localhost:5000'
      const config = {
       header: {
         "Content-Type": "application/json",

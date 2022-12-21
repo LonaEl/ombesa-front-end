@@ -7,7 +7,7 @@ const ForgotPasswordScreen = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  const url = 'https://loso.adaptable.app/'
+  const url = 'http://localhost:5000'
 
   const forgotPasswordHandler = async (e) => {
     e.preventDefault();
