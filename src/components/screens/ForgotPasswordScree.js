@@ -7,7 +7,7 @@ const ForgotPasswordScreen = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  const url = 'https://loso.onrender.com'
+  const url = 'https://ombesa.onrender.com'
 
   const forgotPasswordHandler = async (e) => {
     e.preventDefault();

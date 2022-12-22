@@ -9,7 +9,7 @@ const LoginScreen = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const url = 'https://loso.onrender.com'
+  const url = 'https://ombesa.onrender.com'
 
   const navigate = useNavigate();
    useEffect(() => {

@@ -17,7 +17,7 @@ const RegisterScreen = () => {
   const registerHandler = async (e) => {
     e.preventDefault();
 
-     const url = 'https://loso.onrender.com'
+     const url = 'https://ombesa.onrender.com'
      const config = {
       header: {
         "Content-Type": "application/json",
