@@ -7,7 +7,7 @@ const ForgotPasswordScreen = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  const url = 'http://localhost:5000'
+  const url = 'https://loso.onrender.com'
 
   const forgotPasswordHandler = async (e) => {
     e.preventDefault();

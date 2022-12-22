@@ -9,7 +9,7 @@ const LoginScreen = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const url = 'http://localhost:5000'
+  const url = 'https://loso.onrender.com'
 
   const navigate = useNavigate();
    useEffect(() => {
