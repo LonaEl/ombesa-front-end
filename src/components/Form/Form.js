@@ -37,7 +37,7 @@ const Form = ({ currentId, setCurrentId }) => {
     if (currentId === 0) {
       dispatch(createPost({ ...postData, name: user?.result?.username }));
       clear();
-      navigate('/posts');
+      navigate('/');
     } else {
       dispatch(updatePost(currentId, { ...postData, name: user?.result?.username }));
       clear();

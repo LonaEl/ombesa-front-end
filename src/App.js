@@ -34,7 +34,7 @@ const user = JSON.parse(localStorage.getItem('profile'));
          <Route path="/termsandconditions" exact element={<Terms />} /> 
           <Route exact path="/register" element={<RegisterScreen />} />
           <Route exact path="/forgotpassword"  element={<ForgotPasswordScreen />} />
-          <Route exact path="/passwordreset/:resetToken" element={ <ResetPasswordScreen />} />
+          <Route exact path= "/passwordreset/:resetToken" element={ <ResetPasswordScreen />} />
        </Routes>
       </Container>
     </BrowserRouter>
