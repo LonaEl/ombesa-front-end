@@ -22,8 +22,8 @@ const user = JSON.parse(localStorage.getItem('profile'));
       <Container maxWidth="xl">
         <Navbar />
         <Routes>
-          <Route path="/"  element={<Navigate to="/posts" replace={true}/> } />
-          <Route path="/posts" exact element={<Home />} />
+        <Route path="/" exact element={<Home />} />
+        <Route path="/posts" exact element={<Home />} />
           <Route path="/uploading" exact element={<Upload />} />
           <Route path="/posts/search" exact element={<Home />} />
       {/*    <Route path="/posts/:id" exact element={<PostDetails />} />  */}
