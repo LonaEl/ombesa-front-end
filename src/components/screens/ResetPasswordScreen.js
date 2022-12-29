@@ -14,7 +14,7 @@ const ResetPasswordScreen = ({ history, match }) => {
   const resetPasswordHandler = async (e) => {
     e.preventDefault();
   
-    const url = 'https://ombesa.onrender.com'
+    const url =  'https://ombesa.onrender.com'
     const config = {
       header: {
         "Content-Type": "application/json",

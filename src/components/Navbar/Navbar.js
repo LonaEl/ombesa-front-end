@@ -38,6 +38,18 @@ const Navbar = () => {
     setUser(JSON.parse(localStorage.getItem('profile')));
   }, [location]);
 
+  const token = user?.token;
+
+if (token) {
+  const decodedToken = decode(token);
+  const tokenDuration = decodedToken.exp * 1000 - new Date().getTime();
+  if (tokenDuration > 0) {
+    console.log(`Token duration: ${tokenDuration} milliseconds`);
+  } else {
+    console.log('Token has expired');
+  }
+}
+
   return (
     <AppBar className={classes.appBar} position="static" color="inherit">
       <Link to="/" className={classes.brandContainer}>

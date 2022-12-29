@@ -17,6 +17,7 @@ import useStyles from './styles';
 function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
+
 const Home = () => {
   const { classes } = useStyles();
   const query = useQuery();
@@ -88,18 +89,17 @@ const Home = () => {
               />  */}
 
               <Button onClick={searchPost} className={classes.searchButton} variant="contained" color="primary">Search</Button>
-
-        </AppBar>
-        
-        
-
-         <button onClick={upload} >Upload product image</button>
+               </AppBar>
+               <button onClick={upload} >Upload product image</button>
+           
             {(
               !searchQuery && !tags.length) && (
               <Paper className={classes.pagination} elevation={6}>
                 <Pagination page={page} />
               </Paper>
             )}
+
+
           </Grid>
         </Grid>
       </Container>
