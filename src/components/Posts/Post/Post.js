@@ -10,6 +10,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { deletePost } from '../../../actions/posts';
+import  Modal from '@mui/material/Modal';
 import useStyles from './styles';
 import PaystackIntegration from '../../Payment/PaystackIntegration';
 
@@ -39,65 +40,39 @@ const user = JSON.parse(localStorage.getItem('profile'));
         component="span"
         name="test"
         className={classes.cardAction}
-      /*   onClick={openPost} */
       >
         <CardMedia 
         className={classes.media} 
         image={post.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'}
         title={post.title} 
         /> 
-  
-     {/*  <div className={classes.overlay}>
-          <Typography variant="h6">{post.name}</Typography>
-          <Typography variant="body2">{moment(post.createdAt).fromNow()}</Typography>
-        </div> */}
-        {(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator) && (
+  {(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator) && (
         <div className={classes.overlay2} name="edit">
-         {/*  <Button
-            onClick={Edit}
-            style={{ color: 'white' }}
-            size="small"
-          >
-            <MoreHorizIcon fontSize="default" />
-          </Button> */}
-        </div>
+       </div>
         )}
         <div className={classes.details}>
           <Typography variant="body2" color="textSecondary" component="h2">{post.tags.map((tag) => `#${tag} `)}</Typography>
         </div>
         <Typography className={classes.title} gutterBottom variant="h5" component="h2">{post.title}</Typography>
-     {/*    <CardContent>
-          <Typography variant="body2" color="textSecondary" component="p">{post.message.split(' ').splice(0, 20).join(' ')}...</Typography>
-        </CardContent> */}
-      </ButtonBase>
+  </ButtonBase>
     <Typography>R{post.price}</Typography>
        <CardActions className={classes.cardActions}>
+
+
 <button id="checkout-button" onClick={toggleModal} >Buy</button> 
 
-<div className={classes.body2}>
+ 
+
 {modal && (
-        <div className={classes.modal}>
-          <div onClick={toggleModal} className={classes.overlay3}></div>
-          <div className={classes.modelcontent}>
-            <h4>Please enter your details</h4>
-            <>
+   <Modal open={modal} onClose={toggleModal} className={classes.modal}>
+        <div className={classes.paper}>
+     {/*      <div onClick={toggleModal} className={classes.overlay3}></div> */}
+         <h4>Please enter your details</h4>
             <PaystackIntegration post={post} />
-            </>
-          <button className={classes.closemodal} onClick={toggleModal}>
-              CLOSE
-         </button>
+            <Button className={classes.closeButton} onClick={toggleModal}>CLOSE</Button>
           </div>
-        </div>
-      )}
-</div>
-
-
-
-
-
-
-
-
+        </Modal>
+      )} 
 
 
  {
