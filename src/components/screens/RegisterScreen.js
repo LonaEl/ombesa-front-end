@@ -85,7 +85,7 @@ localStorage.setItem('profile', JSON.stringify(data))
             onChange={(e) => setFirstname(e.target.value)}
           />
 
-
+{/* 
           <label htmlFor="name">Username:</label>
           <input
             type="text"
@@ -95,7 +95,7 @@ localStorage.setItem('profile', JSON.stringify(data))
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-
+ */}
 
         </div>
         <div className="form-group">

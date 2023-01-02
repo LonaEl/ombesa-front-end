@@ -7,9 +7,12 @@ import "./LoginScreen.css";
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
 
   const url =  'https://ombesa.onrender.com'
+
+  const toggleShowPassword = () => setShowPassword(!showPassword);
 
   const navigate = useNavigate();
    useEffect(() => {
@@ -67,8 +70,9 @@ const LoginScreen = () => {
               Forgot Password?
             </Link>
           </label>
+
           <input
-            type="password"
+            type={showPassword ? 'text' : 'password'} 
             required
             id="password"
             autoComplete="true"
@@ -77,6 +81,7 @@ const LoginScreen = () => {
             value={password}
             tabIndex={2}
           />
+        <input type="checkbox" onChange={toggleShowPassword} /> Show Password
         </div>
         <button type="submit" className="btn btn-primary">
           Login
